@@ -12,6 +12,9 @@ EOF
 apt-get update
 
 apt-get update
+apt-cache madison kubeadm | head -n 5
+apt-cache madison kubelet | head -n 5
+apt-cache madison kubectl | head -n 5
 
 apt-get install -yq \
     ebtables \
