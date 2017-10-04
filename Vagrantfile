@@ -5,6 +5,8 @@ require 'securerandom'
 MAX_MASTERS = 1
 MAX_MINIONS = 1
 DEFAULT_BOX = 'ubuntu/xenial64'.freeze
+MASTER_MEM = '1024'
+MINION_MEM = '1024'
 
 random_string1 = SecureRandom.hex
 random_string2 = SecureRandom.hex
@@ -24,7 +26,7 @@ Vagrant.configure('2') do |config|
       master.vm.network 'private_network', ip: master_ip
 
       master.vm.provider 'virtualbox' do |vb|
-        vb.memory = '1024'
+        vb.memory = MASTER_MEM
       end
 
       master.vm.provision 'shell', inline: "echo 127.0.0.1 #{master_name} >>/etc/hosts"
@@ -51,7 +53,7 @@ Vagrant.configure('2') do |config|
       node.vm.network 'private_network', ip: "192.168.50.#{node_address}"
 
       node.vm.provider 'virtualbox' do |vb|
-        vb.memory = '1024'
+        vb.memory = MINION_MEM
       end
 
       node.vm.provision 'shell', inline: "echo 127.0.0.1 #{node_name} >>/etc/hosts"
