@@ -62,7 +62,7 @@ Vagrant.configure('2') do |config|
 
       node.vm.provision 'shell', path: 'scripts/setup-base.sh'
 
-      node.vm.provision 'shell', inline: "kubeadm join --token #{cluster_init_token} #{first_master}:6443"
+      node.vm.provision 'shell', inline: "kubeadm join --skip-preflight-checks --token #{cluster_init_token} #{first_master}:6443"
     end
   end
 end

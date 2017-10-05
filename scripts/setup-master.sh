@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 
-kubeadm init --apiserver-advertise-address=$1 --pod-network-cidr=10.244.0.0/16
+kubeadm init --apiserver-advertise-address=$1 \
+  --pod-network-cidr=10.244.0.0/16 \
+  --skip-preflight-checks #https://issue.k8s.io/53356#issuecomment-333748618
 
 mkdir -p $HOME/.kube
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
