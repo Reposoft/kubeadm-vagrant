@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
 # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#external-dependencies
-export DOCKER_VERSION="-ce=17.03.2~ce-0~ubuntu-xenial"
+export DOCKER_VERSION=".io=1.12.6-0ubuntu1~16.04.1"
 export KUBE_VERSION="=1.7.5-00"
 export DEBIAN_FRONTEND=noninteractive
 
