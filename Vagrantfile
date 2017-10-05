@@ -4,7 +4,8 @@ require 'securerandom'
 
 MAX_MASTERS = 1
 MAX_MINIONS = 1
-DEFAULT_BOX = 'ubuntu/xenial64'.freeze
+#DEFAULT_BOX = 'ubuntu/xenial64'.freeze
+DEFAULT_BOX = 'kubeadm-base_run-local-script-to-create'.freeze
 MASTER_MEM = '1024'
 MINION_MEM = '1024'
 
