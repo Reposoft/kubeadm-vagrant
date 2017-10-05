@@ -2,7 +2,8 @@
 
 # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#external-dependencies
 export DOCKER_VERSION=".io=1.12.6-0ubuntu1~16.04.1"
-export KUBE_VERSION="=1.7.5-00"
+export KUBE_VERSION="=1.8.0-00"
+export KUBEADM_VERSION="=1.8.0-01"
 export DEBIAN_FRONTEND=noninteractive
 
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | apt-key add -
@@ -31,5 +32,5 @@ apt-get install -yq \
     ethtool \
     docker$DOCKER_VERSION \
     kubelet$KUBE_VERSION \
-    kubeadm$KUBE_VERSION \
-    kubectl$KUBE_VERSION
+    kubectl$KUBE_VERSION \
+    kubeadm$KUBEADM_VERSION
