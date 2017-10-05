@@ -31,5 +31,5 @@ apt-get install -yq \
     ethtool \
     docker-ce=$DOCKER_VERSION \
     kubelet=$KUBE_VERSION \
-    kubeadm=$KUBE_VERSION \
+    kubeadm=1.8.0-01 \
     kubectl=$KUBE_VERSION
