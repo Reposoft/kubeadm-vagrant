@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
 kubeadm init \
-  --config /vagrant/kubeadm.yaml \
+  \ #--config /vagrant/kubeadm.yaml \
   --apiserver-advertise-address=$1 \
   --pod-network-cidr=10.244.0.0/16 \
   --skip-preflight-checks #https://issue.k8s.io/53356#issuecomment-333748618
